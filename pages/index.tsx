@@ -10,11 +10,14 @@ const Home: NextPage =() => {
   return (
       <div className="container" >
      <Canvas>
+      {testing ? <Stats/> : null}
+      
       <axesHelper visible={testing}/>
+      <gridHelper visible={testing}/>
       <OrbitControls/>
             <ambientLight intensity={0.1} />
   <directionalLight color="blue" position={[0, 0, 5]} />
-     <AnimationBox/>
+     <AnimationBox isTesting={testing}/>
      </Canvas>
     </div>
   )

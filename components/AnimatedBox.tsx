@@ -3,9 +3,21 @@ import { useHelper } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from "react"
 import { BoxHelper } from "three"
-const AnimationBox =() =>{
-  const meshRef =useRef<THREE.Mesh>(null)
-  useHelper(meshRef,BoxHelper,"grey")
+
+type Props ={
+    isTesting : boolean
+}
+
+
+
+const AnimationBox: React.FC<Props> =( {isTesting}) =>{
+    const meshRef =useRef<THREE.Mesh>(null)
+    {
+        isTesting ? useHelper(meshRef,BoxHelper,"grey") : null
+    }
+      
+  
+ 
 useFrame(()=>{
     console.log("hi")
     if(meshRef.current){
