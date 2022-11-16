@@ -16,17 +16,12 @@ const AnimationBox: React.FC<Props> =( {isTesting}) =>{
       
   
  
-useFrame(()=>{
-    console.log("hi")
-    if(meshRef.current){
 
-      meshRef.current.rotation.x += 0.01
-    }
-  })
   return(
-     <mesh visible={true} ref={meshRef} scale ={[0.5,0.5,0.5]}>
-        <boxGeometry />
-        <meshStandardMaterial/>
+     <mesh  receiveShadow visible={true} ref={meshRef} scale ={[10,10,10]} rotation-x={Math.PI * -0.5}>
+        <planeBufferGeometry  />
+        {/* wireframe */}
+        <meshStandardMaterial color={"lightgray"}  />   
       </mesh>
   )
 }

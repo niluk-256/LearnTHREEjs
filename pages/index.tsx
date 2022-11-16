@@ -1,8 +1,29 @@
 import  type {NextPage} from "next"
-import { Canvas, useThree} from "@react-three/fiber"
-import AnimationBox from "../components/AnimatedBox"
+import { Canvas, useLoader, useThree} from "@react-three/fiber"
+import AnimationBox from "../components/Ground"
+import Light from  "../components/Light"
+import { OrbitControls , Stats ,useAnimations,useGLTF  } from "@react-three/drei"
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
+import { useEffect } from "react"
 
-import { OrbitControls , Stats } from "@react-three/drei"
+
+const MyPlayer =()=>{
+  const model = useLoader(GLTFLoader ,"./models/untitled.glb")
+  const {actions} = useAnimations(model.animations,model.scene)
+  console.log(model)
+  useEffect(()=>{
+    actions?.idle?.play()
+  })
+
+  return <primitive object={model.scene}/>
+}
+
+
+
+
+
+
+
 
 
 const Home: NextPage =() => {
@@ -10,13 +31,14 @@ const Home: NextPage =() => {
   return (
       <div className="container" >
      <Canvas>
+      
       {testing ? <Stats/> : null}
       {testing ? <axesHelper />: null}
       {testing ? <gridHelper />: null}
       
       <OrbitControls/>
-            <ambientLight intensity={0.1} />
-  <directionalLight color="blue" position={[0, 0, 5]} />
+            <Light/>
+            <MyPlayer/>
      <AnimationBox isTesting={testing}/>
      </Canvas>
     </div>
