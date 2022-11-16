@@ -7,7 +7,8 @@ function Light() {
     useHelper(lightRef , DirectionalLightHelper , 5 , "gray")
   return (
     <><ambientLight intensity={0.1} />
-  <directionalLight ref={lightRef} position={[0, 5, 10]} castShadow /></>
+    {/* ref={lightRef} */}
+  <directionalLight  position={[0, 5, 10]} castShadow /></>
   )
 }
 
