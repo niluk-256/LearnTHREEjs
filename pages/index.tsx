@@ -11,9 +11,9 @@ const Home: NextPage =() => {
       <div className="container" >
      <Canvas>
       {testing ? <Stats/> : null}
+      {testing ? <axesHelper />: null}
+      {testing ? <gridHelper />: null}
       
-      <axesHelper visible={testing}/>
-      <gridHelper visible={testing}/>
       <OrbitControls/>
             <ambientLight intensity={0.1} />
   <directionalLight color="blue" position={[0, 0, 5]} />
