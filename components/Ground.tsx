@@ -9,19 +9,20 @@ type Props ={
 }
 
 const AnimationBox: React.FC<Props> =( {isTesting}) =>{
-    const meshRef =useRef<THREE.Mesh>(null)
+  //   const meshRef =useRef<THREE.Mesh>(null)
    
-  useHelper(  meshRef,BoxHelper,"grey" ) 
+  // useHelper(  meshRef,BoxHelper,"grey" ) 
      
       
   
  
 
   return(
-     <mesh  receiveShadow visible={true} ref={meshRef} scale ={[10,10,10]} rotation-x={Math.PI * -0.5}>
+    // ref={meshRef}
+     <mesh  receiveShadow visible={true}  scale ={[100,100,100]} rotation-x={Math.PI * -0.5}>
         <planeBufferGeometry  />
         {/* wireframe */}
-        <meshStandardMaterial color={"lightgray"}  />   
+        <meshStandardMaterial color={"gray"}  />   
       </mesh>
   )
 }

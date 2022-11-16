@@ -10,6 +10,16 @@ import { useEffect } from "react"
 const MyPlayer =()=>{
   const model = useLoader(GLTFLoader ,"./models/untitled.glb")
   const {actions} = useAnimations(model.animations,model.scene)
+
+  model.scene.scale.set(0.5,0.5,0.5)
+  model.scene.traverse((object)=>{
+     {
+      object.castShadow =true
+     }
+  })
+
+
+
   console.log(model)
   useEffect(()=>{
     actions?.idle?.play()
@@ -30,11 +40,11 @@ const Home: NextPage =() => {
   const testing = true
   return (
       <div className="container" >
-     <Canvas>
+     <Canvas shadows >
       
       {testing ? <Stats/> : null}
       {testing ? <axesHelper />: null}
-      {testing ? <gridHelper />: null}
+      {testing ? <gridHelper scale={[10,10,10]} />: null}
       
       <OrbitControls/>
             <Light/>
