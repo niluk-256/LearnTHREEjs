@@ -46,7 +46,7 @@ const directions = ({ forward, backward, left, right }) =>
   };
 
 const MyPlayer = () => {
-  const { forward, backward, left, right, jump } = useInputs();
+  const { forward, backward, left, right, jump, run } = useInputs();
   // const [active, setActive] = useState(false)
   const model = useLoader(GLTFLoader, "./models/untitled.glb");
   const { actions } = useAnimations(model.animations, model.scene);
@@ -80,6 +80,9 @@ const MyPlayer = () => {
 
     if (forward || left || right || backward) {
       action = "walking";
+      if (run) {
+        action = "run";
+      }
     } else if (jump) {
       action = "Backflip";
     } else {
@@ -93,10 +96,10 @@ const MyPlayer = () => {
       nextActionPlay?.reset().fadeIn(0.2).play();
       currentAction.current = action;
     }
-  }, [forward, backward, left, right, jump, actions]);
+  }, [forward, backward, left, right, jump, run, actions]);
 
   useFrame((state, delta) => {
-    if (currentAction.current == "walking" || currentAction.current == "back") {
+    if (currentAction.current == "walking" || currentAction.current == "run") {
       let angleYCameraDirection = Math.atan2(
         camera.position.z - model.scene.position.z,
         camera.position.x - model.scene.position.x
@@ -123,7 +126,7 @@ const MyPlayer = () => {
       walkDirection.normalize();
       walkDirection.applyAxisAngle(rotateAngle, directionsz);
       //velocity
-      const velocity = currentAction.current == "walking" || "back" ? 5 : 1;
+      const velocity = currentAction.current == "run" ? 10 : 5;
       //move camera
 
       const movex = walkDirection.x * velocity * delta;

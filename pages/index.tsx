@@ -6,7 +6,7 @@ import { OrbitControls , Stats ,useAnimations,useGLTF  } from "@react-three/drei
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { useEffect ,useState ,useRef  } from "react"
 import { useInputs } from "../hooks/inputs"
-import MyPlayer from "../components/Player"
+import MyPlayer from "../components/Player.jsx"
 import MyText from "../components/Font"
 
 
@@ -16,10 +16,7 @@ import MyText from "../components/Font"
 
 const Home: NextPage =() => {
   const testing = true
-
-
-
-
+ 
 
   return (
       <div className="container" >
@@ -32,7 +29,7 @@ const Home: NextPage =() => {
       <OrbitControls/>
             <Light/>
             <MyPlayer/>
-            <MyText/>
+            <MyText  />
           
      <AnimationBox isTesting={testing}/>
      </Canvas>

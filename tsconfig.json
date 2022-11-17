@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Player.jsx", "hooks/inputs.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Player.jtsx", "hooks/inputs.jsx"],
   "exclude": ["node_modules"]
 }
