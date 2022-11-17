@@ -10,7 +10,7 @@ const  MyText =()=>{
 
   model.scene.scale.set(1,1,1)
   model.scene.traverse((object)=>{
-     {
+     { 
       object.castShadow =true
      }
   })

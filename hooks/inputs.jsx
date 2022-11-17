@@ -27,11 +27,20 @@ export const useInputs = () => {
     const handleUp = (e) => {
       setInput((m) => ({ ...m, [findKey(e.code)]: false }));
     };
+    //---------------------mobile
+    const handleDownmob = (e) => {
+      setInput((m) => ({ ...m, forward: true }));
+    };
+    const handleUpmob = (e) => {
+      setInput((m) => ({ ...m, forward: false }));
+    };
+    document.addEventListener("touchstart", handleDownmob);
     document.addEventListener("keydown", handleDown);
     document.addEventListener("keyup", handleUp);
     return () => {
       document.removeEventListener("keydown", handleDown);
       document.removeEventListener("keyup", handleUp);
+      document.addEventListener("touchend", handleUpmob);
     };
   });
   return inputs;
