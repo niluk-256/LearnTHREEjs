@@ -14,13 +14,13 @@ import MyText from "../components/Font"
 
 
 
-
-
-
-
-
 const Home: NextPage =() => {
   const testing = true
+
+
+
+
+
   return (
       <div className="container" >
      <Canvas shadows  camera={{ position: [-5, 5, 10] }} >
@@ -33,6 +33,7 @@ const Home: NextPage =() => {
             <Light/>
             <MyPlayer/>
             <MyText/>
+          
      <AnimationBox isTesting={testing}/>
      </Canvas>
     </div>

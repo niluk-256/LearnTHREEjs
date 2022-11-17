@@ -8,7 +8,15 @@ function Light() {
   return (
     <><ambientLight intensity={0.1} />
     {/* ref={lightRef} */}
-  <directionalLight scale={[5,5,5]}   position={[50, 20, -80]} castShadow /></>
+  <directionalLight 
+  shadow-mapSize-height ={1000}
+  shadow-mapSize-width ={1000}
+  shadow-camera-right={20}
+  shadow-camera-left={-20}
+  shadow-camera-top={20}
+  shadow-camera-bottom={-20}
+
+   scale={[10,10,10]}   position={[50, 30, -100]} castShadow /></>
   )
 }
 
