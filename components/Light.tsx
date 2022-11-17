@@ -8,7 +8,7 @@ function Light() {
   return (
     <><ambientLight intensity={0.1} />
     {/* ref={lightRef} */}
-  <directionalLight  position={[0, 5, 10]} castShadow /></>
+  <directionalLight scale={[5,5,5]}   position={[50, 20, -80]} castShadow /></>
   )
 }
 
