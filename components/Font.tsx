@@ -15,7 +15,7 @@ const  MyText =()=>{
      }
   })
 return (
-    <object3D position={[2,2,-10]}>
+    <object3D position={[2,5,-10]}>
         <primitive object={model.scene}  />
 
     </object3D>
