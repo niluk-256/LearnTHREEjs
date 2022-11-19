@@ -101,8 +101,8 @@ const MyPlayer = () => {
   useFrame((state, delta) => {
     if (currentAction.current == "walking" || currentAction.current == "run") {
       let angleYCameraDirection = Math.atan2(
-        camera.position.z - model.scene.position.z,
-        camera.position.x - model.scene.position.x
+        camera.position.x - model.scene.position.x,
+        camera.position.z - model.scene.position.z
       );
 
       //move angle offset
