@@ -9,6 +9,7 @@ import { useInputs } from "../hooks/inputs"
 import MyPlayer from "../components/Player.jsx"
 import MyText from "../components/Font"
 import { Physics } from "@react-three/cannon"
+import MyFlag from "../components/Flag"
 
 
 
@@ -40,6 +41,7 @@ const Home: NextPage =() => {
       </Physics>
             <MyPlayer/>
             <MyText  />
+            <MyFlag  />
           
    
      </Canvas>

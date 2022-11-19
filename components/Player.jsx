@@ -74,7 +74,7 @@ const MyPlayer = () => {
     if (controlRef.current) controlRef.current.target = cameraTarget;
   };
 
-  console.log(model);
+  // console.log(model);
   useEffect(() => {
     let action = "";
 
