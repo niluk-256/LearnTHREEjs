@@ -1,8 +1,8 @@
-import  type {NextPage} from "next"
+import  type {NextPage } from "next"
 import { Canvas, useLoader, useThree} from "@react-three/fiber"
 import AnimationBox from "../components/Ground"
 import Light from  "../components/Light"
-import {  OrbitControls, Stats ,useAnimations,useGLTF  } from "@react-three/drei"
+import {  OrbitControls, Stats ,useAnimations,useGLTF ,Loader  } from "@react-three/drei"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { useEffect ,useState ,useRef  } from "react"
 import { useInputs } from "../hooks/inputs"
@@ -12,6 +12,7 @@ import { Physics } from "@react-three/cannon"
 import MyFlag from "../components/Flag"
 import MyKuluna from "../components/Pole"
 import MyCoco from "../components/Coco"
+import {Suspense} from "react"
 
 
 
@@ -41,13 +42,22 @@ const Home: NextPage =() => {
  <AnimationBox isTesting={testing}/>
 
       </Physics>
+
+
+  <Suspense fallback={null}>
+    
+  
+
+
             <MyPlayer/>
             <MyText  />
             <MyFlag  />
             <MyKuluna/>
             <MyCoco/>
-   
+</Suspense>
      </Canvas>
+     <Loader/>
+     
     </div>
   )
 }
