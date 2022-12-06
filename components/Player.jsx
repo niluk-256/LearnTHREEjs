@@ -52,6 +52,7 @@ const MyPlayer = () => {
   const { actions } = useAnimations(model.animations, model.scene);
 
   model.scene.scale.set(0.5, 0.5, 0.5);
+  model.scene.position.y = 0;
   model.scene.traverse((object) => {
     {
       object.castShadow = true;
@@ -87,6 +88,7 @@ const MyPlayer = () => {
       action = "Backflip";
     } else {
       action = "idle";
+      model.scene.position.y = -0.2;
     }
 
     if (currentAction.current != action) {

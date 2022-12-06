@@ -10,6 +10,8 @@ import MyPlayer from "../components/Player.jsx"
 import MyText from "../components/Font"
 import { Physics } from "@react-three/cannon"
 import MyFlag from "../components/Flag"
+import MyKuluna from "../components/Pole"
+import MyCoco from "../components/Coco"
 
 
 
@@ -26,7 +28,7 @@ const Home: NextPage =() => {
       
       {testing ? <Stats/> : null}
       {/* {testing ? <axesHelper />: null} */}
-      {testing ? <gridHelper scale={[10,10,10]} />: null}
+      {testing ? <gridHelper scale={[100,100,100]} />: null}
       
      
             <Light/>
@@ -42,7 +44,8 @@ const Home: NextPage =() => {
             <MyPlayer/>
             <MyText  />
             <MyFlag  />
-          
+            <MyKuluna/>
+            <MyCoco/>
    
      </Canvas>
     </div>

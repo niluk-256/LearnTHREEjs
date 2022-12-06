@@ -1,7 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { BoxHelper } from "three";
-import { useHelper } from "@react-three/drei";
+import { useHelper, useTexture } from "@react-three/drei";
 import { usePlane } from "@react-three/cannon";
 
 // type Props ={
@@ -10,7 +10,8 @@ import { usePlane } from "@react-three/cannon";
 
 const AnimationBox = ({ isTesting }) => {
   //   const meshRef =useRef<THREE.Mesh>(null)
-
+  const map = useTexture("./textures/coast_sand_rocks_02_rough_1k.png");
+  // const roughmap = useTexture("./texture/snow_02_rough_2k.png");
   // useHelper(  meshRef,BoxHelper,"grey" )
 
   const [ref] = usePlane(() => ({
@@ -28,12 +29,12 @@ const AnimationBox = ({ isTesting }) => {
       receiveShadow={true}
       ref={ref}
       visible={true}
-      scale={[100, 100, 100]}
+      scale={[1000, 1000, 1000]}
       rotation-x={Math.PI * -0.5}
     >
       <planeBufferGeometry />
       {/* wireframe */}
-      <meshPhongMaterial color={"gray"} />
+      <meshPhongMaterial map={map} />
     </mesh>
   );
 };
