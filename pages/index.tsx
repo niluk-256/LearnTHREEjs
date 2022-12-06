@@ -11,7 +11,7 @@ import MyText from "../components/Font"
 import { Physics } from "@react-three/cannon"
 import MyFlag from "../components/Flag"
 import MyKuluna from "../components/Pole"
-import MyCoco from "../components/Coco"
+// import MyCoco from "../components/Coco"
 import {Suspense} from "react"
 
 
@@ -47,7 +47,7 @@ const Home: NextPage =() => {
             <MyText  />
             <MyFlag  />
             <MyKuluna/>
-            <MyCoco/>
+            {/* <MyCoco/> */}
 </Suspense>
      </Canvas>
      <Loader/>
