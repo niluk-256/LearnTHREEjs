@@ -36,7 +36,7 @@ const AnimationBox = ({ isTesting }) => {
       <planeBufferGeometry />
 
       {/* wireframe */}
-      <meshPhongMaterial map={map} roughmap={roughmap} fog={true} />
+      <meshPhongMaterial map={map} fog={true} displacementMap={roughmap} />
     </mesh>
   );
 };
