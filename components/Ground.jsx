@@ -11,7 +11,7 @@ import { usePlane } from "@react-three/cannon";
 const AnimationBox = ({ isTesting }) => {
   //   const meshRef =useRef<THREE.Mesh>(null)
   const map = useTexture("./textures/coast_sand_rocks_02_rough_1k.png");
-  // const roughmap = useTexture("./texture/snow_02_rough_2k.png");
+  const roughmap = useTexture("./textures/coast_sand_rocks_02_nor_gl_1k.png");
   // useHelper(  meshRef,BoxHelper,"grey" )
 
   const [ref] = usePlane(() => ({
@@ -34,7 +34,7 @@ const AnimationBox = ({ isTesting }) => {
     >
       <planeBufferGeometry />
       {/* wireframe */}
-      <meshPhongMaterial map={map} />
+      <meshPhongMaterial map={map} roughMap={roughmap} fog={true} />
     </mesh>
   );
 };
