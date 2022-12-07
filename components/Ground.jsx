@@ -33,6 +33,7 @@ const AnimationBox = ({ isTesting }) => {
       rotation-x={Math.PI * -0.5}
     >
       <planeBufferGeometry />
+
       {/* wireframe */}
       <meshPhongMaterial map={map} roughMap={roughmap} fog={true} />
     </mesh>

@@ -28,7 +28,7 @@ function Light() {
   castShadow
  shadow-mapSize={[1024, 1024]}
 
-   scale={[10,10,10]}   position={[30, 60, -200]} >
+   scale={[10,10,10]}   position={[30, 70, -200]} >
     <orthographicCamera attach="shadow-camera" args={[-10, 10, 10, -10]} />
     </directionalLight>
     </>

@@ -19,6 +19,7 @@ const  MyKuluna =()=>{
   console.log(model)
 return (
     <object3D position={[300,0,-200]}>
+      <pointLight position={[20, 50, 50]} intensity = {5} />
         <primitive object={model.scene}  />
 
     </object3D>

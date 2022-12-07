@@ -1,8 +1,8 @@
 import  type {NextPage } from "next"
-import { Canvas, useLoader, useThree} from "@react-three/fiber"
+import { Canvas, useLoader, useThree } from "@react-three/fiber"
 import AnimationBox from "../components/Ground"
 import Light from  "../components/Light"
-import {  OrbitControls, Stats ,useAnimations,useGLTF ,Loader  } from "@react-three/drei"
+import {  OrbitControls, Stats ,useAnimations,useGLTF ,Loader ,Sky } from "@react-three/drei"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { useEffect ,useState ,useRef  } from "react"
 import { useInputs } from "../hooks/inputs"
@@ -49,6 +49,9 @@ const Home: NextPage =() => {
             <MyKuluna/>
             {/* <MyCoco/> */}
 </Suspense>
+                     
+                    
+
      </Canvas>
      <Loader/>
      
