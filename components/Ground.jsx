@@ -12,7 +12,7 @@ const AnimationBox = ({ isTesting }) => {
   //   const meshRef =useRef<THREE.Mesh>(null)
   const map = useTexture("./textures/rock_wall_04_diff_1k.jpg");
   // const map = useTexture("./textures/coast_sand_rocks_02_rough_1k.png");
-  const roughmap = useTexture("./textures/coast_sand_rocks_02_nor_gl_1k.png");
+
   // useHelper(  meshRef,BoxHelper,"grey" )
 
   const [ref] = usePlane(() => ({
@@ -36,7 +36,7 @@ const AnimationBox = ({ isTesting }) => {
       <planeBufferGeometry />
 
       {/* wireframe */}
-      <meshPhongMaterial map={map} fog={true} displacementMap={roughmap} />
+      <meshPhongMaterial map={map} fog={true} />
     </mesh>
   );
 };

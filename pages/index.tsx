@@ -31,7 +31,7 @@ const Home: NextPage =() => {
       {/* {testing ? <axesHelper />: null} */}
       {testing ? <gridHelper scale={[100,100,100]} />: null}
       
-      
+      <Suspense fallback={null}>
             <Light/>
                <Physics
         gravity={[0, -9, 0]}
@@ -42,7 +42,7 @@ const Home: NextPage =() => {
  <AnimationBox isTesting={testing}/>
 
       </Physics>
- <Suspense fallback={null}>
+ 
             <MyPlayer/>
             <MyText  />
             <MyFlag  />
