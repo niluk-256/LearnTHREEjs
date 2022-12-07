@@ -10,16 +10,16 @@ const  MyKuluna =()=>{
   
    
   model.scene.scale.set(2,2,2)
-  // model.scene.traverse((object)=>{
-  //    { 
-  //     object.castShadow =true
-  //    }
-  // })
+  model.scene.traverse((object)=>{
+     { 
+      object.castShadow =true
+     }
+  })
  
   console.log(model)
 return (
-    <object3D position={[300,0,-200]}>
-      <pointLight position={[20, 50, 50]} intensity = {5} />
+    <object3D position={[300,0,-200]} >
+      <pointLight position={[-20, -50, 50]} intensity = {10}  />
         <primitive object={model.scene}  />
 
     </object3D>
