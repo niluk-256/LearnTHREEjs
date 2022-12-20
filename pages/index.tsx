@@ -11,13 +11,8 @@ import MyText from "../components/Font"
 import { Physics } from "@react-three/cannon"
 import MyFlag from "../components/Flag"
 import MyKuluna from "../components/Pole"
-// import MyCoco from "../components/Coco"
+// import Grass from "../components/Grass"
 import {Suspense} from "react"
-
-
-
-
-
 
 const Home: NextPage =() => {
   const testing = true
@@ -32,6 +27,7 @@ const Home: NextPage =() => {
       {testing ? <gridHelper scale={[100,100,100]} />: null}
       
       <Suspense fallback={null}>
+
             <Light/>
                <Physics
         gravity={[0, -9, 0]}
@@ -44,9 +40,12 @@ const Home: NextPage =() => {
       </Physics>
  
             <MyPlayer/>
-            <MyText  />
+            <MyText    
+           />
             <MyFlag  />
             <MyKuluna/>
+          
+            {/* "three": "^0.146.0", */}
             {/* <MyCoco/> */}
 </Suspense>
                      

@@ -36,7 +36,7 @@ const AnimationBox = ({ isTesting }) => {
       <planeBufferGeometry />
 
       {/* wireframe */}
-      <meshPhongMaterial transparent color="#1e90ff" opacity={0.3} />
+      <meshPhongMaterial color="#1e90ff"  opacity={0.8} />
     </mesh>
   );
 };

@@ -140,7 +140,7 @@ const MyPlayer = () => {
   });
   return (
     <>
-      <OrbitControls ref={controlRef} />
+      <OrbitControls ref={controlRef}   />
       <primitive object={model.scene} />
     </>
   );
